@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="user"
+            type="com.example.roomdemo.entity.UserName" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="@dimen/profile_image"
+            android:layout_height="@dimen/profile_image"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:src="@drawable/boy"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="1px"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{user.userName.toUpperCase()}"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@android:color/black"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+            app:layout_constraintStart_toEndOf="@+id/profile_image"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_other"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="User Occupation"
+            android:textColor="@color/back"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+            app:layout_constraintStart_toEndOf="@+id/profile_image"
+            app:layout_constraintTop_toBottomOf="@+id/text_name" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            app:layout_constraintStart_toEndOf="@id/profile_image"
+            android:layout_marginLeft="@dimen/dp_20"
+            app:layout_constraintTop_toBottomOf="@id/profile_image"
+            android:layout_marginTop="10dp"
+            android:background="@color/back"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
